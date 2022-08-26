@@ -1,0 +1,15 @@
+<template>
+    <c-modal label="Approve or Reject Timecards">
+        <c-approve-or-reject-timecards-table timecards={timecards}
+                                            onrejecttimecards={handleRejectTimecard}>
+                                            </c-approve-or-reject-timecards-table>
+    </c-modal>  
+    <c-modal label="Create New Timecard">
+        <lightning-record-edit-form object-api-name ="TimeCard__c"
+                                    onsuccess ={handleSuccess}>
+            <lightning-input-field field-name="Status__c"></lightning-input-field>
+            <lightning-input-field field-name="Project_Name__c"></lightning-input-field>
+            <lightning-button label="Save" type="Submit" variant="brand"></lightning-button>
+        </lightning-record-edit-form>
+    </c-modal>  
+</template>

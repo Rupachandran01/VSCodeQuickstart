@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-left_small">
+            <lightning-datatable columns={columns} 
+                                key-field="Id"
+                                onrowselection={handleRowSelection}
+                                data={timecards}>
+            </lightning-datatable>
+            <div class="slds-p around-small">
+                <lightning-button label="Reject"    
+                                    variant ="destructive" 
+                                    diabled={isDisabled}
+                                    onclick={rejectdSelectedTimecards}></lightning-button>
+                <lightning-button label="Approve" 
+                                    class="slds-p around-small"
+                                    variant ="success"
+                                    diabled={isDisabled}
+                                    onclick={approveSelectedTimecards}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
